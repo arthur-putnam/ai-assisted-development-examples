@@ -54,6 +54,7 @@ inclusion: always
 - Write pure functions where possible — no side effects.
 - Prefer `pathlib` over `os.path` for filesystem operations.
 - Prefer `dataclasses` for simple data containers.
+- For all core or standard library code write unit tests to ensure functionality works.
 ```
 
 ### Step 1.5 — Re-run the same prompt
