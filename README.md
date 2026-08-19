@@ -63,6 +63,18 @@ The goal is to make each technique concrete and directly comparable. Rather than
 
 **What to try:** Run the setup script to apply the exercise patch, then ask a coding agent to perform a thorough code review. Compare results across different agents, models, or prompting strategies using the included evaluation template.
 
+---
+
+### Exercise 005 — Automated Workflows with Kiro Hooks
+
+**Scenario:** A Flask REST API (Users, Products, Orders) with comprehensive API documentation in `docs/api.md`. Developers frequently change API endpoints but forget to update documentation. A Kiro Hook automates documentation synchronization by reasoning about whether the public API contract changed.
+
+| Directory | Description |
+|-----------|-------------|
+| [`exercise-005-automated-workflows-with-kiro-hooks/`](exercise-005-automated-workflows-with-kiro-hooks/) | Experience the manual documentation workflow, then enable a Kiro Hook that automatically detects public API changes and updates docs. Internal refactors correctly produce no documentation changes. |
+
+**What to try:** Modify API endpoints with and without the Hook enabled. Observe how the Hook distinguishes public contract changes (new parameters, new endpoints, changed responses) from internal refactors. Verify the agent's decisions using `git diff`.
+
 ## Repository Structure
 
 ```
@@ -116,6 +128,22 @@ ai-assisted-development-examples/
 │   ├── setup-exercise.ps1            # PowerShell setup/reset script
 │   ├── EXERCISE.md                    # Student instructions
 │   └── README.md
+│
+├── exercise-005-automated-workflows-with-kiro-hooks/  # Hook-driven automation
+│   ├── .kiro/
+│   │   └── hooks/
+│   │       └── sync-api-docs.json     # PostFileSave hook for API doc sync
+│   ├── src/
+│   │   ├── api/                       # Flask route handlers (users, products, orders)
+│   │   ├── models/                    # Dataclass models
+│   │   └── services/                  # Business logic layer
+│   ├── docs/
+│   │   └── api.md                     # API documentation (kept in sync by hook)
+│   ├── tests/                         # Pytest test suite (34 tests)
+│   ├── .exercise/
+│   │   └── instructor/               # Expected behavior for each scenario
+│   ├── EXERCISE.md                    # Student activity (5 parts)
+│   └── README.md
 ```
 
 ## Core Idea
@@ -135,6 +163,7 @@ The repository can grow to cover techniques including:
 - **MCP / Tools** — Extending agent capabilities through Model Context Protocol servers and custom tools.
 - **Verification & Testing** — Ensuring agent output correctness through automated checks.
 - **Code Review** — Using agents to review large changes for security, correctness, performance, and regression issues.
+- **Agent Hooks / Automated Workflows** — Connecting development events (file saves, creates, tool usage) to automated agent actions that maintain project artifacts.
 - **Multi-Agent Workflows** — Coordinating multiple agents to accomplish larger goals.
 
 ## Prerequisites

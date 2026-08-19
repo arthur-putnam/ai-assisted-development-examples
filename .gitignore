@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Downloaded remote skills (fetched via `make setup`)
+**/pptx-skill/
+**/plantuml-skill/
+.tmp-skills-clone/

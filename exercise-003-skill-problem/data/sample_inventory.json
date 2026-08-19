@@ -1,0 +1,151 @@
+{
+  "categories": [
+    {
+      "id": "cat-001",
+      "name": "Electronics",
+      "description": "Electronic components and devices"
+    },
+    {
+      "id": "cat-002",
+      "name": "Office Supplies",
+      "description": "General office materials"
+    },
+    {
+      "id": "cat-003",
+      "name": "Packaging",
+      "description": "Boxes, tape, and shipping materials"
+    }
+  ],
+  "products": [
+    {
+      "sku": "ELEC-001",
+      "name": "USB-C Cable (2m)",
+      "description": "High-speed USB-C to USB-C cable, 2 meters",
+      "category_id": "cat-001",
+      "unit_price": 12.99,
+      "reorder_threshold": 50
+    },
+    {
+      "sku": "ELEC-002",
+      "name": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with USB receiver",
+      "category_id": "cat-001",
+      "unit_price": 29.99,
+      "reorder_threshold": 30
+    },
+    {
+      "sku": "OFFC-001",
+      "name": "A4 Paper (500 sheets)",
+      "description": "White A4 printer paper, 80gsm, ream of 500",
+      "category_id": "cat-002",
+      "unit_price": 8.49,
+      "reorder_threshold": 100
+    },
+    {
+      "sku": "OFFC-002",
+      "name": "Ballpoint Pen (Black)",
+      "description": "Medium point ballpoint pen, black ink",
+      "category_id": "cat-002",
+      "unit_price": 1.29,
+      "reorder_threshold": 200
+    },
+    {
+      "sku": "PACK-001",
+      "name": "Shipping Box (Medium)",
+      "description": "Corrugated cardboard box, 30x20x15cm",
+      "category_id": "cat-003",
+      "unit_price": 2.49,
+      "reorder_threshold": 150
+    },
+    {
+      "sku": "PACK-002",
+      "name": "Packing Tape Roll",
+      "description": "Clear packing tape, 48mm x 66m",
+      "category_id": "cat-003",
+      "unit_price": 3.99,
+      "reorder_threshold": 80
+    }
+  ],
+  "stock_movements": [
+    {
+      "id": "mov-001",
+      "product_sku": "ELEC-001",
+      "type": "RECEIVED",
+      "quantity": 200,
+      "timestamp": "2025-01-15T09:00:00Z",
+      "note": "Initial stock"
+    },
+    {
+      "id": "mov-002",
+      "product_sku": "ELEC-001",
+      "type": "SHIPPED",
+      "quantity": -45,
+      "timestamp": "2025-02-01T14:30:00Z",
+      "note": "Order #1042"
+    },
+    {
+      "id": "mov-003",
+      "product_sku": "ELEC-002",
+      "type": "RECEIVED",
+      "quantity": 100,
+      "timestamp": "2025-01-15T09:00:00Z",
+      "note": "Initial stock"
+    },
+    {
+      "id": "mov-004",
+      "product_sku": "ELEC-002",
+      "type": "SHIPPED",
+      "quantity": -75,
+      "timestamp": "2025-02-10T11:00:00Z",
+      "note": "Bulk order #1051"
+    },
+    {
+      "id": "mov-005",
+      "product_sku": "OFFC-001",
+      "type": "RECEIVED",
+      "quantity": 500,
+      "timestamp": "2025-01-10T08:00:00Z",
+      "note": "Initial stock"
+    },
+    {
+      "id": "mov-006",
+      "product_sku": "OFFC-001",
+      "type": "SHIPPED",
+      "quantity": -420,
+      "timestamp": "2025-03-01T16:00:00Z",
+      "note": "Monthly distribution"
+    },
+    {
+      "id": "mov-007",
+      "product_sku": "PACK-001",
+      "type": "RECEIVED",
+      "quantity": 300,
+      "timestamp": "2025-01-10T08:00:00Z",
+      "note": "Initial stock"
+    },
+    {
+      "id": "mov-008",
+      "product_sku": "PACK-001",
+      "type": "SHIPPED",
+      "quantity": -180,
+      "timestamp": "2025-02-28T10:00:00Z",
+      "note": "Shipping department"
+    },
+    {
+      "id": "mov-009",
+      "product_sku": "PACK-002",
+      "type": "RECEIVED",
+      "quantity": 150,
+      "timestamp": "2025-01-10T08:00:00Z",
+      "note": "Initial stock"
+    },
+    {
+      "id": "mov-010",
+      "product_sku": "OFFC-002",
+      "type": "RECEIVED",
+      "quantity": 500,
+      "timestamp": "2025-01-10T08:00:00Z",
+      "note": "Initial stock"
+    }
+  ]
+}

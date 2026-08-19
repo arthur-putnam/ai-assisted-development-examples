@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Sync API Documentation",
+      "trigger": "PostFileSave",
+      "matcher": "src[\\\\/]api[\\\\/].*\\.py$",
+      "action": {
+        "type": "agent",
+        "prompt": "A file under src/api/ was just saved. Determine whether the public API contract has changed by comparing the current implementation in the saved file against the existing documentation in docs/api.md.\n\nPublic API changes include:\n- New endpoints (routes)\n- Removed endpoints\n- Changed HTTP methods\n- New, removed, or renamed query parameters\n- New, removed, or renamed request body fields\n- Changed response structure (new fields, removed fields, changed types)\n- Changed status codes\n- Changed error responses\n- Changed path parameters\n\nInternal changes that do NOT affect the public API:\n- Renaming local variables or helper functions\n- Refactoring service calls without changing inputs/outputs\n- Adding comments or docstrings\n- Changing import organization\n- Performance optimizations that preserve the same request/response contract\n\nIf the public API contract changed, update docs/api.md to accurately reflect the current implementation. Preserve the existing documentation style, formatting, and structure. Only modify the sections relevant to the changed endpoint(s).\n\nIf the change is purely internal and does not affect the public API contract, do not modify docs/api.md."
+      }
+    }
+  ]
+}
