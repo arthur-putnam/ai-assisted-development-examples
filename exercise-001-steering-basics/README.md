@@ -1,28 +1,90 @@
 # Exercise 001 — Steering Basics
 
-## Scenario: Your First Steering File
+## Prerequisites
 
-This exercise is a blank canvas. There is no existing codebase — just this README and an empty `.kiro/steering/` directory for you to fill in.
+- Kiro IDE installed and open
+- An empty or minimal workspace (any folder blank will do)
+- Throughout this lab, always open a new chat window between exercises unless told otherwise. Steering files are picked up at the start of a conversation.
 
-## Objective
+---
 
-Learn how steering files work by creating one from scratch and observing how it influences agent behavior.
+## Exercise 1 — The Problem Steering Solves
 
-## What to Do
+**Goal:** See what happens when Kiro has no project context, then fix it.
 
-1. Open this project in Kiro.
-2. Create a `.kiro/steering/` directory and add a markdown file with guidelines of your choice (e.g., coding standards, response style, naming conventions).
-3. Ask the agent to generate some code (a small utility, an API endpoint, a data model — anything).
-4. Observe how the agent's output follows the rules you wrote in the steering file.
-5. Modify or add more steering files and repeat — see how the behavior changes.
+### Step 1.1 — Start clean
 
-## Tips
+Ensure there is no `.kiro/steering/` folder in your workspace. If one exists, delete it.
 
-- Steering files are markdown files placed in `.kiro/steering/` at the workspace root.
-- They are included automatically in every agent interaction unless configured otherwise.
-- Use front-matter `inclusion: manual` to make a steering file opt-in via the `#` context key.
-- Use front-matter `inclusion: fileMatch` with a `fileMatchPattern` to include the file only when certain files are in context.
+### Step 1.2 — Ask Kiro to build something
 
-## Why This Matters
+Open a new chat and enter:
 
-Without steering, an agent makes arbitrary choices about style, conventions, and patterns. Steering files let you define those choices once and have them applied consistently across every interaction — like a style guide the agent actually follows.
+```
+Create a Python utility module at src/utils/string_helpers.py with functions to slugify a string, truncate with ellipsis, and capitalize the first letter of each word.
+```
+
+Look at the output. Take note of:
+
+- Naming style (snake_case? camelCase?)
+- Are there docstrings? What format?
+- Are there type hints?
+- Does it raise specific exceptions or bare `Exception`?
+- Are there tests?
+
+### Step 1.3 — Revert
+
+Press **Revert** in the chat to undo the generated files.
+
+### Step 1.4 — Create your first steering file
+
+Create the folder `.kiro/steering/` in your workspace root, then create `.kiro/steering/python-standards.md`:
+
+```markdown
+---
+inclusion: always
+---
+
+# Python Standards
+
+- Use snake_case for functions and variables, PascalCase for classes.
+- Add Sphinx / reStructuredText (reST) Style docstrings to every public function with Args, Returns, and Raises sections.
+- Use type hints on all function signatures (parameters and return types).
+- Raise specific exceptions — never bare `Exception` or plain strings.
+- Write pure functions where possible — no side effects.
+- Prefer `pathlib` over `os.path` for filesystem operations.
+- Prefer `dataclasses` for simple data containers.
+```
+
+### Step 1.5 — Re-run the same prompt
+
+Open a new chat and enter the exact same prompt from Step 1.2.
+
+### Step 1.6 — Compare
+
+The steered version should now have type hints, Google-style docstrings, snake_case naming, and specific exceptions. Same prompt, better output — because Kiro now knows your conventions.
+
+**Takeaway:** Without steering, Kiro makes reasonable guesses. With steering, it follows your standards every time.
+
+
+## Additional Exercises
+
+### Quick Reference
+
+| Inclusion Mode | Front Matter | When It Loads |
+|---|---|---|
+| always | `inclusion: always` | Every interaction |
+| fileMatch | `inclusion: fileMatch` + `fileMatchPattern: [...]` | When matched files are in context |
+| manual | `inclusion: manual` | When referenced with `#name` or `/name` |
+| auto | `inclusion: auto` + `name` + `description` | When Kiro's request matches the description |
+
+| Scope | Location | Priority |
+|---|---|---|
+| Workspace | `.kiro/steering/` | Higher |
+| Global | `~/.kiro/steering/` | Lower |
+
+| Syntax | Purpose |
+|---|---|
+| `#[[file:path/to/file]]` | Reference a live workspace file in steering |
+| `#steering-name` | Include a manual steering file in chat |
+| `/steering-name` | Include via slash command |

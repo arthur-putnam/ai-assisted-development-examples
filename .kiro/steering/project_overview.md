@@ -73,14 +73,10 @@ ai-assisted-development-examples/
 ├── exercise-001-large-code-review/
 │   ├── README.md
 │   ├── EXERCISE.md
-│   ├── src/
-│   └── tests/
 │
 ├── exercise-002-project-steering/
 │   ├── README.md
 │   ├── EXERCISE.md
-│   ├── src/
-│   └── tests/
 │
 └── exercise-003-agent-skills/
     ├── README.md
