@@ -75,6 +75,18 @@ The goal is to make each technique concrete and directly comparable. Rather than
 
 **What to try:** Modify API endpoints with and without the Hook enabled. Observe how the Hook distinguishes public contract changes (new parameters, new endpoints, changed responses) from internal refactors. Verify the agent's decisions using `git diff`.
 
+### Exercise 006 — Requirements Clarification
+
+**Scenario:** A product manager sends a vague Slack-style message asking for a "notifications system" for an existing order management API. The request is missing details about channels, triggers, user preferences, retry logic, formats, and scope.
+
+| Directory | Description |
+|-----------|-------------|
+| [`exercise-006-requirements-clarification/`](exercise-006-requirements-clarification/) | Compare implementing directly from a vague stakeholder request vs. first using the agent to clarify requirements and produce a written specification. Observe how spec-first development reduces assumptions and rework. |
+
+**What to try:** Give the PM's message to an agent and ask it to implement the feature directly. Then reset, use the agent to identify ambiguities and write a spec first, and implement from that. Compare the two results.
+
+---
+
 ## Repository Structure
 
 ```
@@ -144,6 +156,14 @@ ai-assisted-development-examples/
 │   │   └── instructor/               # Expected behavior for each scenario
 │   ├── EXERCISE.md                    # Student activity (5 parts)
 │   └── README.md
+│
+├── exercise-006-requirements-clarification/           # Spec-first development
+│   ├── data/
+│   │   └── stakeholder-request.md     # Vague PM feature request
+│   ├── .exercise/
+│   │   └── instructor/               # Example spec and evaluation rubric
+│   ├── EXERCISE.md                    # Student activity (4 parts)
+│   └── README.md
 ```
 
 ## Core Idea
@@ -164,6 +184,7 @@ The repository can grow to cover techniques including:
 - **Verification & Testing** — Ensuring agent output correctness through automated checks.
 - **Code Review** — Using agents to review large changes for security, correctness, performance, and regression issues.
 - **Agent Hooks / Automated Workflows** — Connecting development events (file saves, creates, tool usage) to automated agent actions that maintain project artifacts.
+- **Requirements Clarification** — Using agents to surface ambiguities in vague requests and produce structured specifications before implementation.
 - **Multi-Agent Workflows** — Coordinating multiple agents to accomplish larger goals.
 
 ## Prerequisites
