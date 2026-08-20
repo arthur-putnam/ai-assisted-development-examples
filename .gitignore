@@ -1,5 +1,6 @@
 exercise-001-steering-basics/*
 !exercise-001-steering-basics\README.md
+**/node_modules/**
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
