@@ -167,6 +167,21 @@ Category-level includes may be used when many icons from the same category are n
 
 Do not use arbitrary or guessed AWS service macro names. Confirm the appropriate symbol name from the AWS Icons for PlantUML distribution when necessary.
 
+**Important:** AWS service icon category paths do not always match intuitive naming. When unsure of the correct category for a service, consult the [AWSSymbols.md](https://github.com/awslabs/aws-icons-for-plantuml/blob/main/AWSSymbols.md) reference to find the correct include path.
+
+Common services with non-obvious category paths:
+
+| Service | Correct Include Path |
+|---------|---------------------|
+| API Gateway | `NetworkingContentDelivery/APIGateway.puml` |
+| CloudFront | `NetworkingContentDelivery/CloudFront.puml` |
+| ECS | `Containers/ElasticContainerService.puml` |
+| EKS | `Containers/ElasticKubernetesService.puml` |
+| SQS | `ApplicationIntegration/SimpleQueueService.puml` |
+| SNS | `ApplicationIntegration/SimpleNotificationService.puml` |
+| Step Functions | `ApplicationIntegration/StepFunctions.puml` |
+| EventBridge | `ApplicationIntegration/EventBridge.puml` |
+
 ## AWS Example
 
 A simple AWS architecture might resemble:
