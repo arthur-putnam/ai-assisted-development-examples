@@ -1,0 +1,93 @@
+@startuml system-architecture
+
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v23.0/dist
+
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/Compute/Lambda.puml
+!include AWSPuml/NetworkingContentDelivery/APIGateway.puml
+!include AWSPuml/Database/DynamoDB.puml
+
+skinparam componentStyle rectangle
+skinparam linetype ortho
+
+title Inventory Management System - Component Architecture
+
+' --- External Client ---
+actor "Client" as client
+
+' --- AWS Cloud Boundary ---
+rectangle "AWS Cloud" as aws {
+
+    ' --- API Gateway ---
+    APIGateway(apigw, "Inventory Management API", "REST API - prod stage - Proxy Integration")
+
+    ' --- Lambda Function ---
+    rectangle "Lambda Function (Python 3.12, 256 MB)" as lambda_boundary {
+
+        Lambda(lambda_fn, "API Handler", "lambda_handler.handler")
+
+        rectangle "Mangum Adapter" as mangum <<adapter>> {
+        }
+
+        rectangle "Flask Application (src/app.py)" as flask {
+            component "Category\nEndpoints" as cat_routes
+            component "Product\nEndpoints" as prod_routes
+            component "Stock\nEndpoints" as stock_routes
+        }
+
+        rectangle "Service Layer (src/services.py)" as services {
+            component "CategoryService" as cat_svc
+            component "ProductService" as prod_svc
+            component "StockService" as stock_svc
+        }
+
+        rectangle "Model Layer (src/models.py)" as models {
+            component "Category" as cat_model
+            component "Product" as prod_model
+            component "StockMovement" as mov_model
+            component "ReorderAlert" as alert_model
+        }
+
+        rectangle "Data Store (src/store.py)" as store {
+            component "InventoryStore\n(in-memory)" as inv_store
+        }
+    }
+
+    ' --- DynamoDB Tables ---
+    rectangle "DynamoDB Tables (PAY_PER_REQUEST)" as dynamo_boundary {
+        DynamoDB(cat_table, "inventory-categories", "PK: id")
+        DynamoDB(prod_table, "inventory-products", "PK: sku, GSI: category-index")
+        DynamoDB(mov_table, "inventory-stock-movements", "PK: id, GSI: product-sku-index")
+    }
+}
+
+' --- Relationships ---
+client --> apigw : HTTPS
+
+apigw --> lambda_fn : Proxy {proxy+}
+
+lambda_fn --> mangum
+mangum --> flask
+
+cat_routes --> cat_svc
+prod_routes --> prod_svc
+stock_routes --> stock_svc
+
+cat_svc --> inv_store
+prod_svc --> inv_store
+stock_svc --> inv_store
+
+inv_store ..> cat_table : Future DynamoDB backend
+inv_store ..> prod_table
+inv_store ..> mov_table
+
+services --> models : uses
+
+' --- Legend ---
+legend right
+  |= Symbol |= Meaning |
+  | --> | Direct dependency |
+  | ..> | Planned / not yet implemented |
+endlegend
+
+@enduml

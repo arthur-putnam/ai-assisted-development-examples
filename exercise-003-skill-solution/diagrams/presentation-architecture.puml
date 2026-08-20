@@ -1,0 +1,59 @@
+@startuml presentation-architecture
+
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v23.0/dist
+
+!include AWSPuml/AWSCommon.puml
+!include AWSPuml/Compute/Lambda.puml
+!include AWSPuml/NetworkingContentDelivery/APIGateway.puml
+!include AWSPuml/Database/DynamoDB.puml
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontSize 14
+skinparam rectangleBorderColor #232F3E
+skinparam rectangleBackgroundColor #F5F8FC
+
+title Inventory Management System - AWS Architecture
+
+left to right direction
+
+actor "Client" as client #232F3E
+
+rectangle "AWS Cloud" as aws #F5F8FC {
+
+    APIGateway(apigw, "API Gateway", "REST API - prod stage")
+
+    rectangle "Lambda Function" as lambda_box #EAF2FA {
+        Lambda(lambda_fn, "API Handler", "Python 3.12, 256 MB")
+
+        rectangle "Application Layers" as app_layers #FFFFFF {
+            component "Flask REST API" as flask #4A90D9
+            component "Service Layer" as services #5BA85A
+            component "Pydantic Models" as models #E8A838
+            component "Data Store" as store #9B59B6
+        }
+    }
+
+    rectangle "DynamoDB Tables" as dynamo_box #EAF2FA {
+        DynamoDB(cat_table, "Categories", "PK: id")
+        DynamoDB(prod_table, "Products", "PK: sku, GSI: category-index")
+        DynamoDB(mov_table, "Stock Movements", "PK: id, GSI: product-sku-index")
+    }
+}
+
+client --> apigw : HTTPS
+apigw --> lambda_fn : Proxy Integration
+lambda_fn --> flask : Mangum
+flask --> services
+services --> models
+services --> store
+store ..> cat_table : planned
+store ..> prod_table : planned
+store ..> mov_table : planned
+
+legend right
+  |= Line |= Meaning |
+  | --> | Active dependency |
+  | ..> | Planned (not yet implemented) |
+endlegend
+
+@enduml
