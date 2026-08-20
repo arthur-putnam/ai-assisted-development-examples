@@ -76,6 +76,7 @@ Open this project in Kiro and ask the agent the same questions as the problem ve
 1. "Generate a PlantUML component diagram showing the system architecture."
 2. "Generate a PlantUML sequence diagram for the reorder workflow."
 3. "Create a PowerPoint presentation outline for a stakeholder review of this system."
+4. "Create a powerpoint describing the project, include an architecture diagram generated using plantUML."
 
 ## Expected Observations
 
