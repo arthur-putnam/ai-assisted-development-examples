@@ -2,7 +2,7 @@
 
 ## Scenario
 
-You are a developer on an e-commerce team. Your product manager, Jamie, has sent a message requesting a "notifications" feature for the order management system. The message is in `data/stakeholder-request.md`.
+You are a developer on an e-commerce team. Your product manager, Jamie, has sent a message requesting a "notifications" feature for the order management system. The message is in `stakeholder-request.md`.
 
 Read it before continuing.
 
@@ -21,7 +21,7 @@ Give the stakeholder request directly to your coding agent and ask it to impleme
 
 Example prompt:
 
-> Read `data/stakeholder-request.md`. This is a feature request from our product manager. Implement the notifications feature for our order management system.
+> Read `stakeholder-request.md`. This is a feature request from our product manager. Implement the notifications feature for our order management system.
 
 **Do not provide additional clarification.** Let the agent work from the message as-is.
 
@@ -43,7 +43,7 @@ Now reset (discard the implementation from Part 1) and take a different approach
 
 Example prompt:
 
-> Read `data/stakeholder-request.md`. This is a feature request from our product manager. Before implementing anything, I need to clarify the requirements. Analyze this request and:
+> Read `stakeholder-request.md`. This is a feature request from our product manager. Before implementing anything, I need to clarify the requirements. Analyze this request and:
 >
 > 1. List every ambiguity or missing detail you can identify.
 > 2. For each ambiguity, suggest a clarifying question I should ask the PM.
@@ -123,3 +123,17 @@ Human verifies
 ```
 
 This is not waterfall — it is a 15-minute investment that turns a vague idea into an aligned, verifiable plan.
+
+
+
+# Bonus / Alternative Prompts
+
+## Grill Me
+>Read stakeholder-request.md. This is a feature request from our product manager. Before implementing anything, I need to clarify the requirements. Analyze this request and use the /grill-with-docs skill to clarify the requirements.
+
+## Straight to implmentation - (Use Spec mode)
+>Read `stakeholder-request.md`. This is a feature request from our product manager. Implement the notifications feature for our order management system. Do not ask clarifing questions go straight into 
+
+
+## Straight to implmentation - (Use Default mode)
+>Read `stakeholder-request.md`. This is a feature request from our product manager. Implement the notifications feature for our order management system. Do not ask clarifing questions go straight into implmentation.
