@@ -87,6 +87,18 @@ The goal is to make each technique concrete and directly comparable. Rather than
 
 ---
 
+### Exercise 007 — Debugging with Terminal Context
+
+**Scenario:** A Transaction Reconciliation Service that processes financial transactions through a multi-stage pipeline (validation, enrichment, reconciliation) using concurrent batch processing. The application crashes with a confusing data integrity error, the traceback is misleading, and all 25 unit tests pass.
+
+| Directory | Description |
+|-----------|-------------|
+| [`exercise-007-debugging-with-terminal/`](exercise-007-debugging-with-terminal/) | Use a coding agent's terminal access to collaboratively debug a non-obvious runtime crash. Practice sharing errors, forming hypotheses, and verifying fixes through the `/terminal` workflow. |
+
+**What to try:** Run `python main.py` and share the crash with your agent. Let it investigate without hints. Observe its debugging strategy — does it follow the misleading traceback, or does it recognize the accumulation pattern in the batch counts? Try different `--batch-size` values to gather additional evidence.
+
+---
+
 ## Repository Structure
 
 ```
@@ -164,6 +176,19 @@ ai-assisted-development-examples/
 │   │   └── instructor/               # Example spec and evaluation rubric
 │   ├── EXERCISE.md                    # Student activity (4 parts)
 │   └── README.md
+│
+├── exercise-007-debugging-with-terminal/              # Agent-assisted debugging
+│   ├── src/                           # Transaction pipeline (models, stages, batch processor)
+│   ├── tests/                         # Unit tests (25 tests, all passing)
+│   ├── data/
+│   │   └── transactions.csv           # 105 sample financial transactions
+│   ├── .exercise/
+│   │   └── instructor/               # Root cause analysis and evaluation rubric
+│   ├── setup-exercise.sh             # Bash setup/reset script
+│   ├── setup-exercise.ps1            # PowerShell setup/reset script
+│   ├── main.py                        # Entry point (crashes at runtime)
+│   ├── EXERCISE.md                    # Student activity (5 parts)
+│   └── README.md
 ```
 
 ## Core Idea
@@ -185,6 +210,7 @@ The repository can grow to cover techniques including:
 - **Code Review** — Using agents to review large changes for security, correctness, performance, and regression issues.
 - **Agent Hooks / Automated Workflows** — Connecting development events (file saves, creates, tool usage) to automated agent actions that maintain project artifacts.
 - **Requirements Clarification** — Using agents to surface ambiguities in vague requests and produce structured specifications before implementation.
+- **Debugging** — Collaboratively diagnosing runtime failures using terminal access, hypothesis testing, and iterative investigation.
 - **Multi-Agent Workflows** — Coordinating multiple agents to accomplish larger goals.
 
 ## Prerequisites

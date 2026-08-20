@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-08-19T21:40:36.326000",
+  "summary": {
+    "total_batches": 1,
+    "total_transactions": 105,
+    "total_reconciled": 105,
+    "total_failed": 0,
+    "total_amount_processed": 762206.24,
+    "total_processing_time_ms": 6.0,
+    "success_rate": 100.0
+  },
+  "batches": [
+    {
+      "batch_id": "batch-001",
+      "transactions": 105,
+      "reconciled": 105,
+      "failed": 0,
+      "amount": 762206.24,
+      "time_ms": 6.0
+    }
+  ]
+}
