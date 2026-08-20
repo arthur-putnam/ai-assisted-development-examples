@@ -1,5 +1,5 @@
 ---
-inclusion: auto
+inclusion: always
 name: plantuml-diagrams
 description: Create, modify, render, or troubleshoot PlantUML diagrams. Use whenever the user asks to create a diagram, architecture diagram, UML diagram, PlantUML file, sequence diagram, component diagram, deployment diagram, class diagram, ER diagram, or other visual representation that can be produced with PlantUML.
 ---
