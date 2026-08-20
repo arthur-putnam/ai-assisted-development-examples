@@ -19,7 +19,7 @@ This exercise makes the difference between those two approaches directly observa
 
 An order management API already exists (customers, orders, status transitions). The product manager sends a casual message requesting a "notifications" feature. The message is deliberately vague — it mentions email, SMS, webhooks, preferences, delivery reliability, and promotional messaging without specifying any of them clearly.
 
-The stakeholder request is in [`data/stakeholder-request.md`](data/stakeholder-request.md).
+The stakeholder request is in [`stakeholder-request.md`](stakeholder-request.md).
 
 ## Learning Objective
 
@@ -37,21 +37,7 @@ Students will observe that:
 
 ## How to Use
 
-1. Read the stakeholder request in `data/stakeholder-request.md`.
+1. Read the stakeholder request in `stakeholder-request.md`.
 2. Open `EXERCISE.md` for the full student activity.
 3. Follow the two-pass experiment described there.
 4. Compare results.
-
-## Structure
-
-```
-exercise-006-requirements-clarification/
-├── README.md                       # This file
-├── EXERCISE.md                     # Student activity and instructions
-├── data/
-│   └── stakeholder-request.md      # The vague PM request
-└── .exercise/
-    └── instructor/
-        ├── example-spec.md         # What a good clarified spec looks like
-        └── evaluation.md           # Rubric for evaluating student work
-```
