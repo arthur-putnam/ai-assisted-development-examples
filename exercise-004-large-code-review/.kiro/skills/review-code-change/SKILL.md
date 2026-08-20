@@ -49,7 +49,7 @@ CRITICAL: You MUST call invokeSubAgent for all four agents. Do NOT attempt to re
 4. Normalize outputs into a consistent format
 5. Deduplicate overlapping issues
 6. Resolve conflicts conservatively (prefer higher severity)
-7. Aggregate into a unified report
+7. Aggregate into a unified report (markdown) and CSV file
 
 ## Severity Model
 
@@ -58,6 +58,7 @@ CRITICAL: You MUST call invokeSubAgent for all four agents. Do NOT attempt to re
 - LOW: Nice to improve
 
 ## Output Format
+Produce a markdown code review report and a CSV with the following columns: Severity, issue name, details/reason, issue location
 
 ### Summary
 - Overall verdict: APPROVE / REQUEST CHANGES / COMMENT
