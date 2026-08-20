@@ -12,6 +12,18 @@ class Config:
     MAX_PAGE_SIZE = 100
     DEFAULT_PAGE_SIZE = 20
 
+    # Transfer settings
+    TRANSFER_FEE_PERCENTAGE = 0.005
+    TRANSFER_FEE_THRESHOLD = 10000.0
+
+    # Notification settings
+    NOTIFICATION_BATCH_SIZE = 50
+    WEBHOOK_TIMEOUT_SECONDS = 10
+
+    # Bulk import settings
+    MAX_IMPORT_ROWS = 5000
+    IMPORT_BATCH_SIZE = 100
+
 
 class TestConfig(Config):
     """Test configuration."""

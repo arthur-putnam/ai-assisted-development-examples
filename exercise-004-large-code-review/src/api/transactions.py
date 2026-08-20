@@ -88,6 +88,9 @@ def create_transaction_endpoint():
     if errors:
         return jsonify(format_error_response("Validation failed", errors)), 400
 
+    # Handle case where transaction might be a dict (error status)
+    if isinstance(transaction, dict):
+        return jsonify(format_success_response(transaction)), 201
     return jsonify(format_success_response(transaction.to_dict(), "Transaction created")), 201
 
 

@@ -8,7 +8,12 @@ from src.services.account_service import get_account_by_id, update_account_balan
 
 
 def get_transactions_for_user(user_id, account_id=None, limit=20, offset=0):
-    """Get transactions for a user with optional filtering."""
+    """Get transactions for a user with optional filtering.
+
+    ISSUE-13: Changed default sort order from 'date DESC, id DESC' to
+    'date ASC, id ASC' without documenting the change. Any client that
+    relied on most-recent-first ordering will now receive oldest-first.
+    """
     db = get_db()
 
     query = "SELECT * FROM transactions WHERE user_id = ?"
@@ -18,7 +23,7 @@ def get_transactions_for_user(user_id, account_id=None, limit=20, offset=0):
         query += " AND account_id = ?"
         params.append(account_id)
 
-    query += " ORDER BY date DESC, id DESC LIMIT ? OFFSET ?"
+    query += " ORDER BY date ASC, id ASC LIMIT ? OFFSET ?"
     params.extend([limit, offset])
 
     rows = db.execute(query, params).fetchall()
@@ -38,11 +43,19 @@ def get_transaction_by_id(transaction_id, user_id):
 
 
 def create_transaction(user_id, account_id, amount, transaction_type, description=None, category_id=None, txn_date=None):
-    """Create a new transaction and update account balance."""
+    """Create a new transaction and update account balance.
+
+    ISSUE-06: Changed return value from (transaction, errors) tuple to
+    returning a dict with extra metadata. This breaks callers that
+    expect a Transaction object (e.g., recurring_service, existing tests).
+    The actual returned value is still a tuple for backwards compat in
+    the success path, but on error, returns (dict, errors) instead of
+    (None, errors).
+    """
     # Verify account ownership
     account = get_account_by_id(account_id, user_id)
     if account is None:
-        return None, ["Account not found or access denied"]
+        return {"status": "error", "account_id": account_id}, ["Account not found or access denied"]
 
     if txn_date is None:
         txn_date = date.today().isoformat()
@@ -81,6 +94,13 @@ def create_transaction(user_id, account_id, amount, transaction_type, descriptio
     # Update account balance
     update_account_balance(account_id, user_id, new_balance)
     db.commit()
+
+    # Send notification for large transactions
+    try:
+        from src.services.notification_service import check_and_notify_large_transaction
+        check_and_notify_large_transaction(user_id, amount, transaction_type, description)
+    except Exception:
+        pass  # Don't fail transaction creation if notification fails
 
     return transaction, []
 

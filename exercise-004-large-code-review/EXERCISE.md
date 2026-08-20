@@ -158,3 +158,10 @@ After completing the exercise:
 4. How would the review quality change with a more specific or structured prompt?
 5. Would you trust this agent's review without human verification? Why or why not?
 6. What is the agent's recall (proportion of real issues found) vs. precision (proportion of reported issues that are real)?
+
+
+
+# Alternative Prompts
+
+## Using SKill + Subagents
+> Review all uncommitted changes using the /review-code-change skill

@@ -1,0 +1,21 @@
+Severity,Issue Name,Details/Reason,Location
+HIGH,SQL Injection in Admin Report,"start_date, end_date, and sort_by params interpolated via f-string into SQL query",src/api/admin.py — user_activity_report()
+HIGH,Hardcoded Production API Key,"Secret sk_live_admin_... committed in plaintext source code",src/api/admin.py line 11
+HIGH,Missing Authentication on /upcoming,"@require_auth decorator absent; exposes all users' recurring transaction data",src/api/recurring.py — list_upcoming()
+HIGH,Race Condition in Transfers,"Balance read-then-write without transaction/locking; enables double-spend",src/services/transfer_service.py — execute_transfer()
+HIGH,Breaking Sort Order Change,"DESC→ASC change without deprecation path; breaks clients expecting recent-first",src/services/transaction_service.py — get_transactions_for_user()
+HIGH,HTTP 201 Returned for Error State,"Error dict wrapped in success response with 201 status code",src/api/transactions.py — create_transaction_endpoint()
+HIGH,Breaking Return Type in create_transaction,"Error returns dict instead of None; truthy dict causes callers to treat errors as success",src/services/transaction_service.py — create_transaction()
+MEDIUM,N+1 Query in Recurring Processing,"get_account_by_id called per-row inside loop instead of batch loading",src/services/recurring_service.py — process_due_recurring()
+MEDIUM,Synchronous Webhook Blocking Requests,"urlopen with 10s timeout runs synchronously in request thread",src/services/notification_service.py — _send_webhook()
+MEDIUM,Sensitive Data in INFO Logs,"Webhook URLs (may contain tokens) and email addresses logged at INFO level",src/services/notification_service.py
+MEDIUM,No Row Limit Enforced on Bulk Import,"MAX_IMPORT_ROWS=5000 defined in Config but never checked; unbounded CSV input",src/services/bulk_import_service.py
+MEDIUM,Connection-per-Row in Bulk Import,"get_db() called inside loop for each CSV row instead of once before loop",src/services/bulk_import_service.py
+MEDIUM,Off-by-One in Fee Threshold,"Uses > instead of >= so exactly $10000 avoids fee",src/services/transfer_service.py
+MEDIUM,Bulk Import Bypasses Validation,"Negative amounts inserted directly without positive-amount check",src/services/bulk_import_service.py
+MEDIUM,Month-Boundary Crash in Date Calc,"date(year month day) raises ValueError for day 29-31 in short months",src/models/recurring.py — calculate_next_date()
+MEDIUM,Missing Import Causes NameError,"RecurringTransaction.from_row used but not imported; runtime crash",src/api/recurring.py — list_upcoming()
+LOW,Duplicated Notification Logic,"check_and_notify_budget and check_and_notify_large_transaction share identical dispatch pattern",src/services/notification_service.py
+LOW,Config Values Duplicated in Service,"TRANSFER_FEE_* constants redefined instead of using Config class",src/services/transfer_service.py
+LOW,Bare except Exception: pass,"Silent exception swallowing prevents debugging; should log at WARNING",src/services/transaction_service.py and bulk_import_service.py
+LOW,Inline Import Suggesting Circular Dep,"notification_service imported inside function body of transaction_service",src/services/transaction_service.py — create_transaction()
