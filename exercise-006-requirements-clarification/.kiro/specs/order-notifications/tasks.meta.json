@@ -1,0 +1,419 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Create project directory structure and initialize TypeScript configuration": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742118
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202750719
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204222056
+      }
+    ],
+    "1.2 Define core enums, interfaces, and type definitions": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742182
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204228914
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204346473
+      }
+    ],
+    "2.1 Implement idempotency key generation and duplicate detection": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742225
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204350610
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204530006
+      }
+    ],
+    "3.1 Implement customer preference resolution and management": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742297
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204351336
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204530736
+      }
+    ],
+    "4.1 Implement notification content assembly per event type": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742334
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204352159
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204531574
+      }
+    ],
+    "5. Checkpoint - Core business logic verification": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742373
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204550677
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204561608
+      }
+    ],
+    "6.1 Implement notification logging with write-ahead pattern": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742416
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204570072
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204766867
+      }
+    ],
+    "7.1 Implement Email and SMS channel adapters": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742465
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204570932
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204767692
+      }
+    ],
+    "7.2 Implement Webhook adapter with HMAC signing and endpoint verification": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742531
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204571786
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204768542
+      }
+    ],
+    "8.1 Implement webhook endpoint registration and management": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742571
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204572797
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204769380
+      }
+    ],
+    "9.1 Implement retry scheduling with exponential backoff": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742607
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204774498
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204933182
+      }
+    ],
+    "10. Checkpoint - Delivery infrastructure verification": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742650
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204940726
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204951610
+      }
+    ],
+    "11.1 Implement delivery routing to channel adapters": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742689
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204956309
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205119851
+      }
+    ],
+    "12.1 Implement shipping notification deferral logic": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742734
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204957184
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205120700
+      }
+    ],
+    "13.1 Implement core notification engine orchestration": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742782
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205124854
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205294895
+      }
+    ],
+    "14.1 Implement message queue consumer": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742841
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205300178
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205437876
+      }
+    ],
+    "15. Checkpoint - Full system integration verification": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742882
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205442094
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205455034
+      }
+    ],
+    "16.1 Wire all components together with dependency injection": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742922
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205459442
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205585989
+      }
+    ],
+    "17. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787202742956
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205590091
+      },
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205608014
+      }
+    ],
+    "1. Set up project structure, core types, and interfaces": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204346514
+      }
+    ],
+    "2. Implement Idempotency Layer": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204530054
+      }
+    ],
+    "3. Implement Preference Resolver": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204530803
+      }
+    ],
+    "4. Implement Content Assembler": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204531619
+      }
+    ],
+    "6. Implement Notification Log": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204766918
+      }
+    ],
+    "7. Implement Channel Adapters": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204768597
+      }
+    ],
+    "8. Implement Webhook Endpoint Manager": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204769425
+      }
+    ],
+    "9. Implement Retry Manager": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787204933225
+      }
+    ],
+    "11. Implement Delivery Router": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205119902
+      }
+    ],
+    "12. Implement Shipping Deferral Handler": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205120739
+      }
+    ],
+    "13. Implement Notification Engine": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205294944
+      }
+    ],
+    "14. Implement Event Consumer": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205437926
+      }
+    ],
+    "16. Integration wiring and end-to-end tests": [
+      {
+        "executionId": "8231e992-8ebb-4cc0-8604-592520980692",
+        "chatSessionId": "sess_82efd1c9-421c-4f65-a547-e498df717d96",
+        "timestamp": 1787205586030
+      }
+    ]
+  }
+}
