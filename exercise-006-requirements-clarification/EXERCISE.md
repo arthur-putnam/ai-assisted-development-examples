@@ -132,7 +132,7 @@ This is not waterfall — it is a 15-minute investment that turns a vague idea i
 >Read stakeholder-request.md. This is a feature request from our product manager. Before implementing anything, I need to clarify the requirements. Analyze this request and use the /grill-with-docs skill to clarify the requirements.
 
 ## Straight to implmentation - (Use Spec mode)
->Read `stakeholder-request.md`. This is a feature request from our product manager. Implement the notifications feature for our order management system. Do not ask clarifing questions go straight into 
+>Read `stakeholder-request.md`. This is a feature request from our product manager. Implement the notifications feature for our order management system. Do not ask clarifing questions go straight into implmentation.
 
 
 ## Straight to implmentation - (Use Default mode)
